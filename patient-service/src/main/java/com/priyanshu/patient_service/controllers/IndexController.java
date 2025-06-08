@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/patient") // http://localhost:5001/api/patient
-public class PatientController {
+@RequestMapping("/")
+public class IndexController {
 
-
+    public String hello(){
+        return "Hello World";
+    }
 }

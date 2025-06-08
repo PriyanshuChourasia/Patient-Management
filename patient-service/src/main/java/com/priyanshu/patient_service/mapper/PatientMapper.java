@@ -4,8 +4,6 @@ import com.priyanshu.patient_service.dtos.responseDTO.PatientResponseDTO;
 import com.priyanshu.patient_service.model.Patient;
 import com.priyanshu.patient_service.utils.timeUtils.DateTimeUtils;
 
-import java.time.ZoneId;
-
 public class PatientMapper {
     public static PatientResponseDTO patientToDto(Patient patient){
         PatientResponseDTO patientDTO = new PatientResponseDTO();
