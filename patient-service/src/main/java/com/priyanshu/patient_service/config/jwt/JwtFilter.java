@@ -23,8 +23,7 @@ public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtils jwtUtils;
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+
 
     private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
 
@@ -38,15 +37,15 @@ public class JwtFilter extends OncePerRequestFilter {
 //                if jwt is not null Get username from requested token
                 String username = jwtUtils.getUserNameFromJwtToken(jwt);
 //                load user data by username and user details
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+//                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
+//                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
 
-                logger.debug("Roles from jwt: {}", userDetails.getAuthorities());
+//                logger.debug("Roles from jwt: {}", userDetails.getAuthorities());
 
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+//                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+//
+//                SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }catch (Exception e){
             logger.error("Cannot set user authentication");
