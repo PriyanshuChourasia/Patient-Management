@@ -13,6 +13,7 @@ import java.util.UUID;
 
 
 
+
 @Entity
 public class Patient {
     @Id
@@ -33,7 +34,6 @@ public class Patient {
     @NotNull
     @Column(name = "dob")
     private LocalDate dateOfBirth;
-
     @NotNull
     @Column(name = "registered_date")
     private LocalDate registeredDate;
@@ -86,20 +86,20 @@ public class Patient {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public LocalDate getRegisteredDate() {
         return registeredDate;
     }
 
     public void setRegisteredDate(LocalDate registeredDate) {
         this.registeredDate = registeredDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
@@ -109,6 +109,8 @@ public class Patient {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+
 
 
 }
